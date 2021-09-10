@@ -1,0 +1,1520 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: rgb(39, 43, 61);
+  margin: 0;
+  padding: 0;
+  font-family: "ZCOOL KuaiLe", cursive;
+}
+
+.nav {
+  position: relative;
+  background-color: darkviolet;
+  font-size: 2rem;
+  margin: 0;
+  width: 100%;
+  height: 5rem;
+  z-index: 110;
+}
+
+.nav-list {
+  position: relative;
+  height: 100%;
+  /* padding:.5rem; */
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid black;
+}
+
+.nav-button {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 5%;
+  left: 5%;
+  /* margin-right:1rem; */
+}
+
+.burger {
+  position: relative;
+  color: white;
+  background-color: white;
+  display: block;
+  height: 3px;
+  width: 3rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20%;
+}
+
+.burger::before {
+  content: "";
+  display: block;
+  position: relative;
+  background-color: currentColor;
+  height: 3px;
+  width: 3rem;
+  top: -8px;
+  border-radius: 20%;
+}
+
+.burger::after {
+  content: "";
+  display: block;
+  position: relative;
+  background-color: currentColor;
+  height: 3px;
+  width: 3rem;
+  top: 5px;
+  border-radius: 20%;
+}
+
+.nav-list__li {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  text-align: center;
+  top: 10%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  color: rgb(238, 238, 238);
+}
+.remove-storage {
+  font-family: "ZCOOL KuaiLe", cursive;
+  color: currentColor;
+  background-color: darkviolet;
+  border-radius: 1rem;
+  width: 8rem;
+  height: 4rem;
+}
+
+.image {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70rem;
+  height: 25rem;
+  z-index: 100;
+  /* border:1px solid black; */
+}
+
+.main-image {
+  position: absolute;
+  width: 75%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*///////////////////////////////////////////////////////////////////*
+ ////////////////////////PAGINATION DOM ELEMENTS/////////////////////////////*
+ ////////////////////////////////////////////////////////////////////*/
+
+.pag-container {
+  /* border:2px solid white; */
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 45%;
+  height: auto;
+  padding: 1rem;
+  color: white;
+  z-index: 100;
+}
+
+.pag-item {
+  display: inline-block;
+  font-size: 2rem;
+  background-color: darkviolet;
+  /* text-align: center; */
+  padding: 1.7rem;
+  width: 6rem;
+  height: 7rem;
+  border-radius: 20%;
+  margin-left: 1rem;
+  cursor: pointer;
+  border: 2px solid white;
+  margin-bottom: 1rem;
+}
+
+/*///////////////////////////////////////////////////////////////////*
+ ////////////////////////API DOM ELEMENT/////////////////////////////*
+ ////////////////////////////////////////////////////////////////////*/
+.root {
+  position: absolute;
+  height: auto;
+  width: 100%;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%);
+  padding: 0 0 0 8.5rem;
+  z-index: 100;
+  background-color: transparent;
+}
+.API-div {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem;
+  background-color: white;
+  border: 2px solid black;
+  height: 30rem;
+  width: 20rem;
+  border-radius: 3%;
+  margin: 2rem;
+  text-align: center;
+}
+
+.API-image {
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 3%;
+}
+
+.API-p {
+  width: 100%;
+  height: 5%;
+  font-size: 2rem;
+  font-weight: 700;
+  /* text-align:center; */
+  margin-top: 1rem;
+  margin-left: 0;
+  /* transform:translate(-50%,-50%); */
+}
+
+.API-ul {
+  margin-top: 2.5rem;
+  margin-right: 1rem;
+}
+
+.API-li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 1.5rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.API-li1 {
+  color: rgb(165, 128, 128);
+}
+.API-li2 {
+  color: rgb(143, 32, 124);
+}
+.API-li3 {
+  color: rgb(38, 141, 28);
+}
+
+/*///////////////////////////////////////////////////////////////////*
+ ////////////////////////POPUP DOM ELEMENT/////////////////////////////*
+ ////////////////////////////////////////////////////////////////////*/
+
+.backdrop {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: black;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.popup-div {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(230, 211, 233);
+  height: 90%;
+  width: 30%;
+  border: 3px solid black;
+  border-radius: 3%;
+}
+
+.popup-header {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  height: auto;
+  font-size: 3.5rem;
+  /* padding:0 0 0 0; */
+  /* border:1px solid green; */
+}
+
+.popup-par {
+  position: absolute;
+  font-size: 2.5rem;
+  text-align: center;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%);
+  width: 75%;
+  height: auto;
+  word-spacing: 0.4rem;
+  /* border:1px solid green; */
+}
+
+.popup-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25rem;
+  border: 3px solid black;
+  border-radius: 3%;
+}
+
+.popup-return {
+  position: absolute;
+  right: 2%;
+  top: 1%;
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid black;
+  background-color: rgb(230, 211, 233);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.popup-return-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border: 3px solid black;
+  background-color: black;
+  border-radius: 100%;
+}
+
+/*///////////////////////////////////////////////////////////////////*
+ ////////////////////////EDITION DOM ELEMENTS/////////////////////////////*
+ ////////////////////////////////////////////////////////////////////*/
+
+.backdrop-div {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: black;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.edit-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(230, 211, 233);
+  height: 90vh;
+  width: 40%;
+  border: 3px solid black;
+  border-radius: 5%;
+}
+
+.edit-colors {
+  position: absolute;
+  height: 15rem;
+  width: 100%;
+  top: 15%;
+  /* border: 1px solid black; */
+}
+
+.color-span {
+  display: inline-block;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: crimson;
+}
+
+.edit-colors-array {
+  position: absolute;
+  height: 10rem;
+  top: 10%;
+  right: 0;
+  width: 50%;
+  border-radius: 5px;
+  padding: 2rem;
+  /* border: 1px solid green; */
+}
+
+.color-square {
+  display: inline-block;
+  border: 1px solid black;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 1rem 1rem 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.edit-selector {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.edit-selector button {
+  font-family: "ZCOOL KuaiLe", cursive;
+  font-size: 1.8rem;
+  margin: 1rem;
+  width: 12rem;
+  height: 5rem;
+  border-radius: 1rem;
+  border: 5px solid;
+  color: rgb(248, 238, 240);
+  background-color: blueviolet;
+}
+
+.edit-return {
+  font-family: "ZCOOL KuaiLe", cursive;
+  font-size: 2rem;
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  width: 15rem;
+  height: 4rem;
+  transform: translateX(-50%);
+  border-radius: 1rem;
+  border: 2px solid blueviolet;
+  color: rgb(248, 238, 240);
+  background-color: blueviolet;
+}
+
+.edit-copy-container {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  height: auto;
+  width: auto;
+}
+
+.copyAPI-div {
+  padding: 0.5rem;
+  background-color: white;
+  border: 2px solid black;
+  height: 30rem;
+  width: 21rem;
+  border-radius: 3%;
+  text-align: center;
+}
+
+/*///////////////////////////////////////////////////////////////////*
+ ////////////////////////MEDIA QUERIE 1380px/////////////////////////////*
+ ////////////////////////////////////////////////////////////////////*/
+/*/////////////////MEDIA QUERIE 1380px///////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////MEDIA QUERIE 1380px///////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media (max-width: 1380px) {
+  .image {
+    top: 20%;
+    width: 70rem;
+    height: 25rem;
+  }
+
+  .main-image {
+    width: 75%;
+    height: 100%;
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+   ////////////////////////PAGINATION DOM ELEMENTS/////////////////////////////*
+   ////////////////////////////////////////////////////////////////////*/
+
+  .pag-container {
+    top: 60%;
+    width: 55%;
+    padding: 0.8rem;
+  }
+
+  .pag-item {
+    padding: 1.7rem;
+    width: 5rem;
+    height: 6rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+   ////////////////////////API DOM ELEMENT/////////////////////////////*
+   ////////////////////////////////////////////////////////////////////*/
+  .root {
+    top: 80%;
+    padding: 0 0 0 5rem;
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+   ////////////////////////POPUP DOM ELEMENT/////////////////////////////*
+   ////////////////////////////////////////////////////////////////////*/
+
+  .popup-div {
+    height: 95%;
+    width: 35%;
+  }
+
+  .popup-header {
+    top: 12%;
+    width: 100%;
+    height: auto;
+    font-size: 3rem;
+  }
+
+  .popup-par {
+    font-size: 2rem;
+    text-align: center;
+    top: 22%;
+    width: 75%;
+    height: auto;
+    word-spacing: 0.4rem;
+  }
+
+  .popup-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25rem;
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+   ////////////////////////EDITION DOM ELEMENTS/////////////////////////////*
+   ////////////////////////////////////////////////////////////////////*/
+
+  .edit-div {
+    background-color: rgb(230, 211, 233);
+    height: 95vh;
+    width: 45%;
+  }
+
+  .edit-colors {
+    position: absolute;
+    height: 15rem;
+    width: 100%;
+    top: 15%;
+    /* border: 1px solid blue; */
+  }
+
+  .color-span {
+    top: 25%;
+    left: 25%;
+    font-size: 3rem;
+  }
+
+  .edit-colors-array {
+    height: 10rem;
+    top: 10%;
+    right: 0;
+    width: 50%;
+    padding: 2rem 0 0 2rem;
+    /* border: 1px solid green; */
+  }
+
+  .color-square {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 1rem 1rem 0;
+    cursor: pointer;
+    overflow: hidden;
+    /* border: 1px solid black; */
+  }
+
+  .edit-selector {
+    position: absolute;
+    top: 31%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+  }
+
+  .edit-selector button {
+    font-size: 1.8rem;
+    margin: 1rem;
+    width: 12rem;
+    height: 5rem;
+    border-radius: 1rem;
+    border: 5px solid;
+    color: rgb(248, 238, 240);
+    background-color: blueviolet;
+  }
+
+  .edit-return {
+    font-family: "ZCOOL KuaiLe", cursive;
+    font-size: 2rem;
+    position: absolute;
+    top: 4%;
+    left: 50%;
+    width: 15rem;
+    height: 4rem;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+    border: 2px solid blueviolet;
+    color: rgb(248, 238, 240);
+    background-color: blueviolet;
+  }
+
+  .edit-copy-container {
+    position: absolute;
+    display: inline-block;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    height: auto;
+    width: auto;
+  }
+
+  .copyAPI-div {
+    padding: 0.5rem;
+    background-color: white;
+    border: 2px solid black;
+    height: 30rem;
+    width: 21rem;
+    border-radius: 3%;
+    text-align: center;
+  }
+}
+/*///////////////////////////////////////////////////////////////////*
+ ////////////////////////MEDIA QUERIES 1200px/////////////////////////////*
+ ////////////////////////////////////////////////////////////////////*/
+/*///////////////////////MEDIA QUERIES 1200px////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////MEDIA QUERIES 1200px////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media (max-width: 1200px) {
+  .image {
+    top: 20%;
+    width: 70rem;
+    height: 25rem;
+    z-index: 100;
+  }
+
+  .main-image {
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+     ////////////////////////PAGINATION DOM ELEMENTS/////////////////////////////*
+     ////////////////////////////////////////////////////////////////////*/
+
+  .pag-container {
+    /* border:2px solid white; */
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55%;
+    height: auto;
+    padding: 0.8rem;
+    color: white;
+    z-index: 100;
+    color: black;
+  }
+
+  .pag-item {
+    display: inline-block;
+    font-size: 2rem;
+    background-color: darkviolet;
+    /* text-align: center; */
+    padding: 1.7rem;
+    width: 5rem;
+    height: 6rem;
+    border-radius: 20%;
+    margin-left: 1rem;
+    cursor: pointer;
+    border: 2px solid white;
+    margin-bottom: 1rem;
+  }
+  /*///////////////////////////////////////////////////////////////////*
+     ////////////////////////API DOM ELEMENT/////////////////////////////*
+     ////////////////////////////////////////////////////////////////////*/
+  .root {
+    width: 100%;
+    left: 50%;
+    top: 80%;
+    padding: 0 0 0 11rem;
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+     ////////////////////////POPUP DOM ELEMENT/////////////////////////////*
+     ////////////////////////////////////////////////////////////////////*/
+
+  .popup-div {
+    height: 80%;
+    width: 40%;
+  }
+
+  .popup-header {
+    top: 12%;
+    width: 100%;
+    height: auto;
+    font-size: 3rem;
+  }
+
+  .popup-par {
+    font-size: 2rem;
+    left: 50%;
+    top: 22%;
+    width: 75%;
+    height: auto;
+    /* border:1px solid green; */
+  }
+
+  .popup-img {
+    top: 50%;
+    width: 25rem;
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+     ////////////////////////EDITION DOM ELEMENTS/////////////////////////////*
+     ////////////////////////////////////////////////////////////////////*/
+
+  .edit-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(230, 211, 233);
+    height: 100vh;
+    width: 45%;
+    border: 3px solid black;
+    border-radius: 5%;
+  }
+
+  .edit-colors {
+    position: absolute;
+    height: 25rem;
+    width: 100%;
+    top: 15%;
+    /* border: 1px solid blue; */
+  }
+
+  .color-span {
+    display: inline-block;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: crimson;
+  }
+
+  .edit-colors-array {
+    position: absolute;
+    height: 10rem;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    border-radius: 5px;
+    padding: 2rem 0 0 2rem;
+    /* border: 1px solid green; */
+  }
+
+  .color-square {
+    display: inline-block;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin: 0 1rem 1rem 0;
+    cursor: pointer;
+    overflow: hidden;
+    border: 1px solid black;
+  }
+
+  .edit-selector {
+    position: absolute;
+    width: 100%;
+    height:15rem;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .edit-selector button {
+    font-size: 1.8rem;
+    width: 12rem;
+    height: 5rem;
+    border-radius: 1rem;
+    border: 5px solid;
+    color: rgb(248, 238, 240);
+    background-color: blueviolet;
+  }
+
+  .edit-selector__back{
+    position:absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+  }
+  .edit-selector__text{
+    position:absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+  }
+
+  .edit-return {
+    font-family: "ZCOOL KuaiLe", cursive;
+    font-size: 2rem;
+    position: absolute;
+    top: 4%;
+    left: 50%;
+    width: 15rem;
+    height: 5rem;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+    border: 2px solid blueviolet;
+    color: rgb(248, 238, 240);
+    background-color: blueviolet;
+  }
+
+  .edit-copy-container {
+    position: absolute;
+    display: inline-block;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    height: auto;
+    width: auto;
+  }
+
+  .copyAPI-div {
+    padding: 0.5rem;
+    background-color: white;
+    border: 2px solid black;
+    height: 30rem;
+    width: 21rem;
+    border-radius: 3%;
+    text-align: center;
+  }
+}
+/*///////////////////////////////////////////////////////////////////*
+ ////////////////////////MEDIA QUERIES 1070px/////////////////////////////*
+ ////////////////////////////////////////////////////////////////////*/
+/*///////////////////////MEDIA QUERIES 1070px////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////MEDIA QUERIES 1070px////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media (max-width: 1070px) {
+  .image {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70rem;
+    height: 25rem;
+    z-index: 100;
+    /* border:1px solid black; */
+  }
+
+  .main-image {
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+     ////////////////////////PAGINATION DOM ELEMENTS/////////////////////////////*
+     ////////////////////////////////////////////////////////////////////*/
+
+  .pag-container {
+    /* border:2px solid white; */
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: auto;
+    padding: 0.8rem;
+    color: white;
+    z-index: 100;
+  }
+
+  .pag-item {
+    display: inline-block;
+    font-size: 2rem;
+    background-color: darkviolet;
+    /* text-align: center; */
+    padding: 1.7rem;
+    width: 5rem;
+    height: 6rem;
+    border-radius: 20%;
+    margin-left: 1rem;
+    cursor: pointer;
+    border: 2px solid white;
+    margin-bottom: 1rem;
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+   ////////////////////////API DOM ELEMENT/////////////////////////////*
+   ////////////////////////////////////////////////////////////////////*/
+  .root {
+    position: absolute;
+    height: auto;
+    width: 100%;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%);
+    padding: 0 0 0 5.5rem;
+    z-index: 100;
+    background-color: transparent;
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+   ////////////////////////POPUP DOM ELEMENT/////////////////////////////*
+   ////////////////////////////////////////////////////////////////////*/
+
+  .popup-header {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    height: auto;
+    font-size: 2.5rem;
+    /* padding:0 0 0 0; */
+    /* border:1px solid green; */
+  }
+
+  .popup-par {
+    position: absolute;
+    font-size: 2rem;
+    text-align: center;
+    left: 50%;
+    top: 22%;
+    transform: translate(-50%);
+    width: 75%;
+    height: auto;
+    word-spacing: 0.2rem;
+    /* border:1px solid green; */
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+   ////////////////////////EDITION DOM ELEMENTS/////////////////////////////*
+   ////////////////////////////////////////////////////////////////////*/
+  .edit-div {
+    height: 100vh;
+  }
+  .edit-colors {
+    position: absolute;
+    height: 15rem;
+    width: 100%;
+    top: 10%;
+    /* border: 1px solid blue; */
+  }
+
+  .color-span {
+    display: inline-block;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    text-align: center;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: crimson;
+  }
+
+  .edit-colors-array {
+    position: absolute;
+    height: 10rem;
+    top: 45%;
+    right: 0;
+    width: 100%;
+    border-radius: 5px;
+    padding: 2rem 0 0 2rem;
+    /* border: 1px solid green; */
+  }
+
+  .color-square {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 1rem 1rem 0;
+    cursor: pointer;
+    overflow: hidden;
+    /* border: 1px solid black; */
+  }
+
+  .edit-selector {
+    position: relative;
+    top: 41%;
+    left: 50%;
+    height: 12rem;
+    transform: translate(-50%, -50%);
+  }
+
+  .edit-selector button {
+    font-size: 1.8rem;
+    width: 100%;
+    height: 4rem;
+    border-radius: 1rem;
+    border: 5px solid;
+    color: rgb(248, 238, 240);
+    background-color: blueviolet;
+    left: 0;
+    margin: 0;
+  }
+
+  .edit-selector__back {
+    position: absolute;
+    top:0;
+    transform: translateX(0);
+  }
+
+  .edit-selector__text {
+    position: absolute;
+    top:65%;
+    right:0;
+    transform: translateX(0);
+  }
+
+  .edit-return {
+    font-family: "ZCOOL KuaiLe", cursive;
+    font-size: 3rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 6rem;
+    transform: translateX(-50%);
+    border: 2px solid blueviolet;
+    color: rgb(248, 238, 240);
+    background-color: blueviolet;
+  }
+
+  .edit-copy-container {
+    position: absolute;
+    display: inline-block;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    height: auto;
+    width: auto;
+  }
+}
+/*///////////////////////////////////////////////////////////////////*
+ ////////////////////////MEDIA QUERIES 900px/////////////////////////////*
+ ////////////////////////////////////////////////////////////////////*/
+/*///////////////////////MEDIA QUERIES 900px////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////MEDIA QUERIES 900px////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media (max-width: 900px) {
+  .image {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70rem;
+    height: 25rem;
+    z-index: 100;
+    /* border:1px solid black; */
+  }
+
+  .main-image {
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .nav-list {
+    position: relative;
+    height: 100%;
+    /* padding:.5rem; */
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid black;
+  }
+  .nav-list__li {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+    margin-left: 2rem;
+    top: 10%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    color: rgb(238, 238, 238);
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+   ////////////////////////PAGINATION DOM ELEMENT/////////////////////////////*
+   ////////////////////////////////////////////////////////////////////*/
+
+  .pag-container {
+    /* border:2px solid white; */
+    position: absolute;
+    top: 55%;
+    width: 80%;
+    height: auto;
+  }
+
+  .pag-item {
+    display: inline-block;
+    font-size: 2rem;
+    background-color: darkviolet;
+    /* text-align: center; */
+    padding: 1.7rem;
+    width: 5rem;
+    height: 6rem;
+    border-radius: 20%;
+    margin-left: 1rem;
+    cursor: pointer;
+    border: 2px solid white;
+    margin-bottom: 1rem;
+  }
+  /*///////////////////////////////////////////////////////////////////*
+   ////////////////////////API DOM ELEMENT/////////////////////////////*
+   ////////////////////////////////////////////////////////////////////*/
+  .root {
+    position: absolute;
+    height: auto;
+    width: 100%;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%);
+    padding: 0 0 0 7rem;
+    z-index: 100;
+    background-color: transparent;
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+   ////////////////////////POPUP DOM ELEMENT/////////////////////////////*
+   ////////////////////////////////////////////////////////////////////*/
+
+  .popup-header {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    height: auto;
+    font-size: 2.5rem;
+    /* padding:0 0 0 0; */
+    /* border:1px solid green; */
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+   ////////////////////////EDITION DOM ELEMENTS/////////////////////////////*
+   ////////////////////////////////////////////////////////////////////*/
+
+  .edit-colors {
+    position: absolute;
+    height: 15rem;
+    width: 100%;
+    top: 10%;
+    /* border: 1px solid blue; */
+  }
+
+  .color-span {
+    display: inline-block;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    text-align: center;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: crimson;
+  }
+
+  .edit-colors-array {
+    position: absolute;
+    height: 10rem;
+    top: 55%;
+    right: 0;
+    width: 100%;
+    border-radius: 5px;
+    padding: 2rem 0 0 2rem;
+    /* border: 1px solid green; */
+  }
+
+  .color-square {
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.2rem;
+    margin: 0 1rem 1rem 0;
+    cursor: pointer;
+    overflow: hidden;
+    /* border: 1px solid black; */
+  }
+
+  .edit-selector {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    height: 12rem;
+    transform: translate(-50%, -50%);
+    /* border:1px solid black */
+  }
+
+  .edit-selector button {
+    position: absolute;
+    font-family: "ZCOOL KuaiLe", cursive;
+    font-size: 1.8rem;
+    width: 100%;
+    height: 5rem;
+    border-radius: 1rem;
+    border: 5px solid;
+    color: rgb(248, 238, 240);
+    background-color: blueviolet;
+    left: 0;
+    margin: 0;
+  }
+
+  .edit-selector__back {
+    top: 0;
+  }
+
+  .edit-selector__text {
+    top: 6rem;
+  }
+
+  .edit-return {
+    font-family: "ZCOOL KuaiLe", cursive;
+    font-size: 3rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 6rem;
+    transform: translateX(-50%);
+    border: 2px solid blueviolet;
+    color: rgb(248, 238, 240);
+    background-color: blueviolet;
+  }
+
+  .edit-copy-container {
+    position: absolute;
+    display: inline-block;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    height: auto;
+    width: auto;
+  }
+}
+/*///////////////////////////////////////////////////////////////////*
+ ////////////////////////MEDIA QUERIES 800px/////////////////////////////*
+ ////////////////////////////////////////////////////////////////////*/
+/*///////////////////////MEDIA QUERIES 800px////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////MEDIA QUERIES 800px////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media (max-width: 800px) {
+  /*///////////////////////////////////////////////////////////////////*
+     ////////////////////////PAGINATION DOM ELEMENTS/////////////////////////////*
+     ////////////////////////////////////////////////////////////////////*/
+
+  .pag-container {
+    /* border:2px solid white; */
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    height: auto;
+    padding: 0.8rem;
+    color: white;
+    z-index: 110;
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+     ////////////////////////API DOM ELEMENT/////////////////////////////*
+     ////////////////////////////////////////////////////////////////////*/
+  .root {
+    width: 100%;
+    left: 50%;
+    top: 85%;
+    transform: translate(-50%);
+    padding: 0 0 0 10rem;
+    z-index: 100;
+    background-color: transparent;
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+     ////////////////////////POPUP DOM ELEMENT/////////////////////////////*
+     ////////////////////////////////////////////////////////////////////*/
+
+  .popup-div {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(230, 211, 233);
+    height: 100%;
+    width: 45%;
+    border: 3px solid black;
+    border-radius: 3%;
+  }
+
+  .popup-header {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    height: auto;
+    font-size: 2.5rem;
+    /* padding:0 0 0 0; */
+    /* border:1px solid green; */
+  }
+
+  .popup-par {
+    position: absolute;
+    font-size: 1.8rem;
+    text-align: center;
+    left: 50%;
+    top: 22%;
+    transform: translate(-50%);
+    width: 75%;
+    height: auto;
+    word-spacing: 0.4rem;
+    /* border:1px solid green; */
+  }
+
+  .popup-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25rem;
+    border: 3px solid black;
+    border-radius: 3%;
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+     ////////////////////////EDITION DOM ELEMENTS/////////////////////////////*
+     ////////////////////////////////////////////////////////////////////*/
+
+  .edit-colors {
+    position: absolute;
+    height: 25rem;
+    width: 100%;
+    top: 5%;
+    /* border: 1px solid blue; */
+  }
+  .edit-colors-array {
+    top: 32%;
+  }
+
+  .color-span {
+    display: inline-block;
+    position: absolute;
+    top: 11%;
+    left: 50%;
+  }
+
+  .color-square {
+    height: 2rem;
+    width: 2.5rem;
+  }
+
+  .edit-return {
+    font-family: "ZCOOL KuaiLe", cursive;
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 4rem;
+    transform: translateX(-50%);
+    border: 2px solid blueviolet;
+    color: rgb(248, 238, 240);
+    background-color: blueviolet;
+  }
+
+  .edit-selector {
+    position: absolute;
+    width: 100%;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 10%;
+    /* border: 1px solid black; */
+  }
+  .edit-selector button {
+    height: 4rem;
+  }
+
+  .edit-selector__back {
+    top: 0;
+  }
+
+  .edit-selector__text {
+    bottom: 1rem;
+  }
+
+  .edit-copy-container {
+    position: absolute;
+    display: inline-block;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    height: auto;
+    width: auto;
+  }
+}
+/*///////////////////////////////////////////////////////////////////*
+ ////////////////////////MEDIA QUERIES 600px/////////////////////////////*
+ ////////////////////////////////////////////////////////////////////*/
+/*///////////////////////MEDIA QUERIES 600px////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////MEDIA QUERIES 600px////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+@media (max-width: 600px) {
+  .nav-list__li {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+    top: 10%;
+    left: 12%;
+    transform: translate(-50%, -50%);
+    color: rgb(238, 238, 238);
+  }
+  .image {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70rem;
+    height: 25rem;
+    z-index: 100;
+    /* border:1px solid black; */
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+       ////////////////////////PAGINATION DOM ELEMENTS/////////////////////////////*
+       ////////////////////////////////////////////////////////////////////*/
+
+  .pag-container {
+    top: 55%;
+    width: 100%;
+    height: auto;
+    padding: 3rem;
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+       ////////////////////////API DOM ELEMENT/////////////////////////////*
+       ////////////////////////////////////////////////////////////////////*/
+  .root {
+    top: 85%;
+    padding: 0 0 0 5rem;
+  }
+  /*///////////////////////////////////////////////////////////////////*
+       ////////////////////////POPUP DOM ELEMENT/////////////////////////////*
+       ////////////////////////////////////////////////////////////////////*/
+
+  .popup-div {
+    transform: translate(-50%, -50%);
+    background-color: rgb(230, 211, 233);
+    width: 70%;
+    border: 3px solid black;
+    border-radius: 3%;
+  }
+
+  .popup-header {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    height: auto;
+    font-size: 3rem;
+  }
+
+  .popup-par {
+    position: absolute;
+    font-size: 2rem;
+    text-align: center;
+    left: 50%;
+    top: 22%;
+    transform: translate(-50%);
+    width: 75%;
+    height: auto;
+    word-spacing: 0.4rem;
+    /* border:1px solid green; */
+  }
+
+  .popup-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25rem;
+    border: 3px solid black;
+    border-radius: 3%;
+  }
+
+  .popup-return {
+    position: absolute;
+    right: 2%;
+    top: 1%;
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid black;
+    background-color: rgb(230, 211, 233);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  /*///////////////////////////////////////////////////////////////////*
+     ////////////////////////EDITION DOM ELEMENTS/////////////////////////////*
+     ////////////////////////////////////////////////////////////////////*/
+
+  .edit-selector {
+    position: absolute;
+    width: 100%;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 10%;
+    /* border: 1px solid black; */
+  }
+  .edit-selector button {
+    height: 3.5rem;
+  }
+
+  .edit-selector__back {
+    top: 0;
+  }
+
+  .edit-selector__text {
+    top: 4.5rem;
+  }
+}
